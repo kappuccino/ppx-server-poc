@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const errorHandlers = require('./error')
-
 
 const app = express()
 
@@ -11,16 +11,15 @@ app.set('port', 7777)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(function (req, res, next){
-	res.header("Access-Control-Allow-Origin",  "*")
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Auth, Locat")
-	res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS")
-	res.header("X-Frame-Options", "GOFORIT");
+app.use(cors())
 
+/*
+app.use(function (req, res, next){
 	if('OPTIONS' === req.method) return res.sendStatus(200)
 
 	next()
 })
+*/
 
 app.use(express.static('storage'))
 

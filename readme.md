@@ -1,7 +1,7 @@
 # PPX server (poc)
 
 ## installer (requires nodejs >= 8.6)
-`git clone git@github.com:kappuccino/ppx-server-poc.git ppx-server`  
+`git clone git@github.com:kappuccino/ppx-server-poc.git ppx-server`
 `cd ppx-server`  
 `npm i`  
 
